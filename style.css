@@ -1,6 +1,9 @@
 
+
 body {
     font-family: Arial, sans-serif;
+    background-image: url("img/dandelion-seeds.png");
+    background-repeat: no-repeat;
     font-size: 13px;
     line-height: 18px;
     color: #515076;
@@ -10,27 +13,33 @@ body {
   font-size: 70px;
   font-weight: 400;
   line-height: 78px;
-  margin: 0;
+  margin-bottom: 70px;
   text-align: center;
 }
 
 .products-list {
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    width: 1110px;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 35px;
+    column-gap: 35px;
+    justify-content: center;
 }
 
-.product-card{
+.product-card {
   width: 340px;
   height: 573px;
   background-color: #F7F7FA;
-  margin-bottom: 45px;
 }
 
 .img {
     width: 290px;
     height: 245px;
     padding: 25px;
+    margin-bottom: 30px;
 }
 
 .label-text {
@@ -42,10 +51,9 @@ body {
 
 .title-two {
   font-size: 20px;
-  font-weight: 700;
   line-height: 27px;
   margin: 0;
-  padding: 0 25px;
+  padding: 10px 25px;
   padding-bottom: 10px;
 }
 
@@ -60,17 +68,19 @@ body {
   padding-bottom: 25px;
 }
 
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
 .price-label {
-  font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  padding: 25px;
 }
 
 .price-value {
-  font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  margin-left: 100px;
-  padding: 25px;
 }
