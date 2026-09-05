@@ -154,7 +154,7 @@ function checkPasswords() {
         return;
     }
 
-    if (!passwordInput.value.startsWith(passwordRepeatInput.value)) {
+   if (passwordInput.value !== passwordRepeatInput.value)  {
         passwordRepeatInput.setCustomValidity('Пароли не совпадают!');
         passwordRepeatInput.reportValidity();
     }
