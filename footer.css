@@ -142,14 +142,22 @@
 .footer__button {
     border: none;
     background: none;
-
-    padding: 0;
-
+    padding: 10px 0;
     font-family: inherit;
     font-size: 19px;
+    font-weight: 700;
     color: #111111;
-
     cursor: pointer;
+    transition: opacity 0.2s ease,transform 0.2s ease;
+}
+
+.footer__button:hover {
+    opacity: 0.65;
+    transform: translateY(-1px);
+}
+
+.footer__button:active {
+    transform: translateY(0);
 }
 
 
