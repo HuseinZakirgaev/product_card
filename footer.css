@@ -1,0 +1,311 @@
+.footer {
+    background-color: #393939;
+    color: #ffffff;
+    padding: 92px 90px 28px;
+    min-height: 514px;
+    box-sizing: border-box;
+}
+
+.footer__container {
+    max-width: 1690px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 60px;
+}
+
+
+/* LEFT */
+
+.footer__title {
+    margin: 0 0 22px;
+
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.footer__description {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    white-space: nowrap;
+}
+
+.footer__socials {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    margin-top: 42px;
+}
+
+.footer__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer__social svg {
+    width: 25px;
+    height: 25px;
+
+    fill: currentColor;
+}
+
+
+/* CENTER */
+
+.footer__subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__subscribe-title {
+    margin: 0 0 14px;
+
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.3;
+
+    text-align: center;
+}
+
+.footer__form {
+    width: 430px;
+    height: 66px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #ffffff;
+    border-radius: 12px;
+
+    box-sizing: border-box;
+    padding: 0 20px 0 38px;
+}
+
+.footer__label {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+
+    border: 0;
+}
+
+.footer__input {
+    flex: 1;
+
+    min-width: 0;
+
+    border: none;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 17px;
+    color: #333333;
+}
+
+.footer__input::placeholder {
+    color: #444444;
+}
+
+.footer__divider {
+    width: 1px;
+    height: 24px;
+
+    background-color: #333333;
+
+    margin: 0 20px;
+}
+
+.footer__button {
+    border: none;
+    background: none;
+    padding: 10px 0;
+    font-family: inherit;
+    font-size: 19px;
+    font-weight: 700;
+    color: #111111;
+    cursor: pointer;
+    transition: opacity 0.2s ease,transform 0.2s ease;
+}
+
+.footer__button:hover {
+    opacity: 0.65;
+    transform: translateY(-1px);
+}
+
+.footer__button:active {
+    transform: translateY(0);
+}
+
+
+/* RIGHT */
+
+.footer__navigation {
+    justify-self: end;
+}
+
+.footer__navigation-title {
+    margin: 0 0 22px;
+
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.footer__links a {
+    font-size: 19px;
+    color: #ffffff;
+    text-decoration: none;
+
+    transition: opacity 0.2s ease;
+}
+
+.footer__links a:hover {
+    opacity: 0.65;
+}
+
+
+/* BOTTOM */
+
+.footer__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 168px;
+}
+
+.footer__line {
+    width: 72px;
+    height: 1px;
+
+    background-color: #ffffff;
+
+    margin-bottom: 34px;
+}
+
+.footer__copyright {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    text-align: center;
+}
+
+
+/* ADAPTIVE */
+
+@media (max-width: 900px) {
+
+    .footer {
+        padding: 60px 30px 30px;
+    }
+
+    .footer__container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .footer__description {
+        white-space: normal;
+    }
+
+    .footer__subscribe {
+        align-items: flex-start;
+    }
+
+    .footer__subscribe-title {
+        text-align: left;
+    }
+
+    .footer__navigation {
+        justify-self: start;
+    }
+
+    .footer__form {
+        width: 100%;
+        max-width: 510px;
+    }
+
+    .footer__bottom {
+        margin-top: 80px;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .footer {
+        padding: 45px 20px 25px;
+    }
+
+    .footer__title {
+        font-size: 26px;
+    }
+
+    .footer__description {
+        font-size: 17px;
+    }
+
+    .footer__subscribe-title {
+        font-size: 21px;
+    }
+
+    .footer__form {
+        height: auto;
+        min-height: 60px;
+        padding: 0 15px 0 20px;
+    }
+
+    .footer__input {
+        font-size: 14px;
+    }
+
+    .footer__button {
+        font-size: 15px;
+    }
+
+    .footer__divider {
+        margin: 0 12px;
+    }
+
+    .footer__copyright {
+        font-size: 14px;
+    }
+}
