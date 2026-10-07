@@ -1,110 +1,148 @@
-// 3. Объект с данными пользователя
-const userInfo = {
+// ==========================================
+// Домашнее задание №8: Объекты и массивы
+// ==========================================
+
+// ==========================================
+// Задание 3: Объект с личными данными
+// ==========================================
+
+const myProfile = {
     firstName: "Husein",
     lastName: "Zakirgaev",
-    email: "huseinzakirgaev@mail.com",
-    job: "Developer",
-    position: "Frontend Developer",
     age: 44,
-    country: "Dagestan",
-    city: "Makhachkala",
-    relationshipStatus: "married"
+    country: "Saudi Arabia",
+    city: "Madina",
+    workExperience: "IT Company",
+    jobTitle: "Frontend Developer",
+    maritalStatus: "married",
+    email: "huseinzakirgaev@gmail.com",
 };
 
-// 4. Объект автомобиля
-const car = {
+console.log(myProfile);
+
+// ==========================================
+// Задание 4: Объект с данными автомобиля
+// ==========================================
+
+const myCar = {
     brand: "Lada",
     model: "Granta",
     year: 2020,
     color: "silver",
-    transmission: "manual"
+    mileage: 127000,
+    fuelType: "petrol",
+    transmission: "manual",
+    bodyType: "sedan",
+    engineCapacity: 1.6,
+    price: 7000,
 };
 
-car.owner = userInfo;
+myCar.owner = myProfile;
 
-// 5. Проверка максимальной скорости
-function addMaximumSpeed(car) {
-    if (!car.maximumSpeed) {
-        car.maximumSpeed = 200;
+console.log(myCar);
+
+// ==========================================
+// Задание 5: Проверка и добавление максимальной скорости
+// ==========================================
+
+function carSpeed(car) {
+    if (car.maxSpeed === undefined) {
+        car.maxSpeed = 200;
     }
 }
 
-addMaximumSpeed(car);
+carSpeed(myCar);
 
-console.log(car);
+console.log(myCar);
 
-// 6. Получение значения свойства объекта
-function showProperty(object, property) {
-    console.log(object[property]);
+// ==========================================
+// Задание 6: Функция вывода свойства объекта
+// ==========================================
+
+function showPropertyValue(object, key) {
+    console.log(object[key]);
 }
 
-showProperty(car, "brand");
-showProperty(car, "model");
+showPropertyValue(myCar, "brand");
+showPropertyValue(myCar, "model");
+showPropertyValue(myCar, "year");
 
-// 7. Массив продуктов
-const products = [
-    "Наушники",
-    "Телефон",
-    "Ноутбук",
-    "Клавиатура",
-    "Мышь"
-];
 
+// ==========================================
+// Задание 7: Массив объектов с продуктами
+// ==========================================
+
+const products = ["Часы", "Телефон", "Телевизор", "Ноутбук"];
 console.log(products);
 
-// 8. Массив книг
-const books = [
+// ==========================================
+// Задание 8 Массив книг
+// ==========================================
+
+const ibnQayyimBooks = [
+  {
+    title: "Фаваид",
+    author: "Ибн аль-Каййим",
+    translationYear: 2013,
+    coverColor: "Черный",
+    genre: "религиозная литература"
+  },
     {
-        title: "Фаваид",
-        author: "Ибн аль-Каййим",
-        year: 1292,
-        coverColor: "black",
-        genre: "religious literature"
+    title: "Степени идущих",
+    author: "Ибн аль-Каййим",
+    translationYear: 2016,
+    coverColor: "Синий",
+    genre: "религиозная литература"
+  },
+    {
+    title: "аль-Вабиль",
+    author: "Ибн аль-Каййим",
+    translationYear: 2018,
+    coverColor: "Красный",
+    genre: "религиозная литература"
     },
-    {
-        title: "Степени идущих",
-        author: "Ибн аль-Каййим",
-        year: 1292,
-        coverColor: "black",
-        genre: "religious literature"
-    },
-    {
-        title: "Китабу ат-таухид",
-        author: "Мухаммад ибн Абдульуаххаб",
-        year: 1703,
-        coverColor: "green",
-        genre: "religious literature"
-    }
 ];
 
-books.push({
-    title: "Гарри Поттер и философский камень",
-    author: "Дж. К. Роулинг",
-    year: 2000,
-    coverColor: "yellow",
-    genre: "fantasy"
+ibnQayyimBooks.push({
+    title: "Китаб ар-Рух",
+    author: "Ибн аль-Каййим",
+    translationYear: 2013,
+    coverColor: "Зеленый",
+    genre: "религиозная литература"
 });
 
-console.log(books);
+console.log(ibnQayyimBooks);
 
-const universeBooks = [
-    {
-        title: "Гарри Поттер и Орден Феникса",
-        author: "Дж. К. Роулинг",
-        year: 2003,
-        coverColor: "purple",
-        genre: "fantasy"
-    },
-    {
-        title: "Гарри Поттер и Принц-полукровка",
-        author: "Дж. К. Роулинг",
-        year: 2005,
-        coverColor: "gray",
-        genre: "fantasy"
-    }
+
+// ==========================================
+// Задание 9: Объединение массивов книг
+// ==========================================
+
+const ibnTaymiyyahBooks = [
+  {
+    title: "Акыда аль-Васития",
+    author: "Ибн Таймия",
+    translationYear: 2014,
+    coverColor: "Синий",
+    genre: "религиозная литература"
+  },
+  {
+    title: "Краткий завет",
+    author: "Ибн Таймия",
+    translationYear: 2021,
+    coverColor: "Зеленый",
+    genre: "религиозная литература"
+  },
+  {
+    title: "Правило о достоинствах Корана",
+    author: "Ибн Таймия",
+    translationYear: 2025,
+    coverColor: "Красный",
+    genre: "религиозная литература"
+  }
 ];
 
-const allBooks = [...books, ...universeBooks];
+const allBooks = [...ibnQayyimBooks, ...ibnTaymiyyahBooks];
 
 console.log(allBooks);
 
@@ -112,7 +150,7 @@ function addRareProperty(books) {
     return books.map(function (book) {
         return {
             ...book,
-            isRare: book.year > 2000
+            isRare: book.translationYear > 2015
         };
     });
 }
