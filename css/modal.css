@@ -1,11 +1,5 @@
 .modal {
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
 }
 
 .modal-showed {
@@ -13,16 +7,22 @@
 }
 
 .overlay {
-    position: absolute;
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.overlay-showed {
+    display: block;
 }
 
 .modal__content {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     width: 500px;
@@ -31,7 +31,7 @@
     box-sizing: border-box;
     background-color: #ffffff;
     border-radius: 12px;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     z-index: 11;
     overflow-y: auto;
     color: #515076;
@@ -65,7 +65,7 @@
     font-weight: 400;
     line-height: 1;
     cursor: pointer;
-    transition: background-color 0.2s ease,color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .modal__close:hover {
@@ -129,9 +129,12 @@
     position: absolute;
     top: 30px;
     right: 30px;
+    display: flex;
+    gap: 15px;
 }
 
-#registration-button {
+#registration-button,
+#auth-button {
     padding: 12px 28px;
     border: 2px solid #333333;
     border-radius: 10px;
@@ -144,7 +147,8 @@
     transition: 0.2s ease;
 }
 
-#registration-button:hover {
+#registration-button:hover,
+#auth-button:hover {
     background-color: #333333;
     color: #ffffff;
 }
@@ -159,7 +163,8 @@
         font-size: 24px;
     }
 
-    #registration-button {
+    #registration-button,
+    #auth-button {
         padding: 10px 20px;
         font-size: 16px;
     }
