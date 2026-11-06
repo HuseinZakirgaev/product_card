@@ -1,4 +1,4 @@
-import { Modal } from './Modal.js';
+import { Modal } from '../homework-14/Modal.js';
 import { Form } from './Form.js';
 
 const footerForm = document.querySelector('.footer__form');
@@ -60,23 +60,17 @@ footerForm.addEventListener('submit', (event) => {
     console.log(data);
 });
 
+const registrationModal = new Modal('registration-modal', 'registration-button', true);
+const authModal = new Modal('auth-modal', 'auth-button', false);
 
-const registrationModal = new Modal('registration-modal');
-const registrationButton = document.querySelector('#registration-button');
-const registrationForm = document.querySelector('.registration__form');
+const registrationForm = document.querySelector('#registration-form');
+const authForm = document.querySelector('#auth-form');
 const nameInput = document.querySelector('#name');
 const surnameInput = document.querySelector('#surname');
 const birthDateInput = document.querySelector('#birth-date');
 const loginInput = document.querySelector('#login');
 const passwordInput = document.querySelector('#password');
 const passwordRepeatInput = document.querySelector('#password-repeat');
-
-
-if (registrationButton) {
-    registrationButton.addEventListener('click', () => {
-        registrationModal.open();
-    });
-}
 
 function validateTextInput(input) {
     input.setCustomValidity('');
@@ -173,7 +167,7 @@ birthDateInput.addEventListener('input', () => {
 });
 
 let user = null;
-const regFormObj = new Form('registration-form'); 
+const regFormObj = new Form('registration-form');
 
 registrationForm.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -200,7 +194,17 @@ registrationForm.addEventListener('submit', async (event) => {
     console.log(user);
     alert('Регистрация прошла успешно!');
 
-    // Очищаем форму и закрываем окно
     regFormObj.reset();
     registrationModal.close();
 });
+
+const authFormObj = new Form('auth-form');
+
+if (authForm) {
+    authForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log(authFormObj.getData());
+        authFormObj.reset();
+        authModal.close();
+    });
+}
