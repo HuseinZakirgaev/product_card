@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Алексей",
+      "surname": "Соколов",
+      "email": "a.sokolov@techstudio.ru",
+      "age": 28,
+      "role": "Frontend-разработчик",
+      "city": "Москва",
+      "department": "Веб-платформа"
+    },
+    {
+      "id": 2,
+      "name": "Мария",
+      "surname": "Ковалева",
+      "email": "m.kovaleva@techstudio.ru",
+      "age": 25,
+      "role": "UI/UX Дизайнер",
+      "city": "Санкт-Петербург",
+      "department": "Дизайн-система"
+    },
+    {
+      "id": 3,
+      "name": "Дмитрий",
+      "surname": "Воронов",
+      "email": "d.voronov@techstudio.ru",
+      "age": 32,
+      "role": "Backend-инженер",
+      "city": "Казань",
+      "department": "API и Инфраструктура"
+    },
+    {
+      "id": 4,
+      "name": "Екатерина",
+      "surname": "Морозова",
+      "email": "e.morozova@techstudio.ru",
+      "age": 27,
+      "role": "QA Automation",
+      "city": "Новосибирск",
+      "department": "Контроль качества"
+    },
+    {
+      "id": 5,
+      "name": "Илья",
+      "surname": "Белов",
+      "email": "i.belov@techstudio.ru",
+      "age": 30,
+      "role": "Fullstack-разработчик",
+      "city": "Екатеринбург",
+      "department": "Ядро продукта"
+    },
+    {
+      "id": 6,
+      "name": "Анна",
+      "surname": "Лебедева",
+      "email": "a.lebedeva@techstudio.ru",
+      "age": 24,
+      "role": "Product Manager",
+      "city": "Нижний Новгород",
+      "department": "Развитие продукта"
+    }
+  ]
+}
