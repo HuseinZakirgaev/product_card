@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Асинхронность, JSON и LocalStorage — Управление пользователями</title>
+  <link rel="stylesheet" href="async.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="header-bar">
+      <div class="header-title-group">
+        <span class="eyebrow">Практическое задание // Async &amp; LocalStorage</span>
+        <h1>База пользователей</h1>
+      </div>
+      <div class="storage-badge" id="storageBadge">
+        <span class="storage-dot" id="storageDot"></span>
+        <span id="storageStatusText">LocalStorage: проверка...</span>
+      </div>
+    </header>
+
+    <section class="controls-toolbar">
+      <div class="btn-group">
+        <button type="button" class="btn-primary" id="btnFetchAll">Получить все карточки</button>
+        <button type="button" class="btn-danger" id="btnDeleteAll">Удалить все карточки</button>
+      </div>
+      <label class="error-toggle-label" title="Включите, чтобы протестировать выброс new Error при загрузке">
+        <input type="checkbox" id="simulateErrorCheckbox">
+        <span>Симулировать ошибку запроса (new Error)</span>
+      </label>
+    </section>
+
+    <div class="info-banner" id="infoBanner" role="status">
+      <span id="infoBannerText"></span>
+    </div>
+
+    <main class="center-stage" id="centerStage">
+      <div class="status-box" id="statusBox">
+        <div class="spinner" id="loadingSpinner"></div>
+        <p class="status-title" id="statusText">Данные загружаются</p>
+        <p class="status-sub" id="statusSubText">Выполняется асинхронный запрос fetch к users.json...</p>
+      </div>
+
+      <div class="cards-grid" id="cardsContainer"></div>
+    </main>
+  </div>
+
+  <script src="./async.js"></script>
+</body>
+</html>

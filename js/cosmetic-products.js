@@ -1,7 +1,22 @@
+/**
+ * Создать JS-файл с массивом объектов, описывающих товары из вёрстки.
+ */
+
+/**
+ * @typedef {Object} CosmeticProduct
+ * @property {string} image  Путь к изображению товара.
+ * @property {string} recommendedSkinType  Тип кожи, для которого предназначен товар.
+ * @property {string} name  Название товара.
+ * @property {string} description  Описание товара.
+ * @property {string[]} ingredients  Список компонентов товара.
+ * @property {number} price  Цена товара.
+ */
+/** @type {CosmeticProduct[]} */
+
 export const cosmeticProducts = [
     {
         image: "img/mousse_1.jpg",
-        targetSkinType: "для нормальной кожи",
+        recommendedSkinType: "для нормальной кожи",
         name: "Увлажняющий мусс",
         description: "Глубоко увлажняет кожу лица, оставляя её мягкой и гладкой.",
         ingredients: [
@@ -13,8 +28,8 @@ export const cosmeticProducts = [
     },
 
     {
-        image: "img/Moisturizing_mask.jpg",
-        targetSkinType: "для нормальной кожи",
+        image: "img/moisturizing_mask.jpg",
+        recommendedSkinType: "для нормальной кожи",
         name: "Увлажняющая маска",
         description: "Способствует удерживанию влаги в верхних слоях кожи.",
         ingredients: [
@@ -27,7 +42,7 @@ export const cosmeticProducts = [
 
     {
         image: "img/gel_cleanser.jpg",
-        targetSkinType: "для нормальной кожи",
+        recommendedSkinType: "для нормальной кожи",
         name: "Гель для умывания",
         description: "Интенсивно очищает, не повреждает защитный барьер кожи.",
         ingredients: [
@@ -40,7 +55,7 @@ export const cosmeticProducts = [
 
     {
         image: "img/gift_set_1.jpg",
-        targetSkinType: "для нормальной кожи",
+        recommendedSkinType: "для нормальной кожи",
         name: "Подарочный набор №1",
         description: "Набор, состоящий из увлажняющего крема и маски.",
         ingredients: [
@@ -53,7 +68,7 @@ export const cosmeticProducts = [
 
     {
         image: "img/gift_set_5.jpg",
-        targetSkinType: "для нормальной кожи",
+        recommendedSkinType: "для нормальной кожи",
         name: "Подарочный набор №5",
         description: "Весь набор средств Invisible Symphony: крем, маска, мусс и гель для умывания.",
         ingredients: [

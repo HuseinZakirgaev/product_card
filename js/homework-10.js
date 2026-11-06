@@ -1,80 +1,33 @@
 import { cosmeticProducts } from "./cosmetic-products.js";
 
-const productsList = document.querySelector(".products");
+const productTemplate = document.querySelector(".js-product-card-template");
+const productsList = document.querySelector(".js-products");
 
-function getProductTemplate(product) {
-    return `
-        <li class="products__item card">
+cosmeticProducts.forEach(product => {
+    const productsCopy = productTemplate.content.cloneNode(true);
 
-            <img
-                src="${product.image}"
-                alt="Товар ${product.name}"
-                class="card__image"
-            >
+    productsCopy.querySelector(".card__image").src = product.image;
+    productsCopy.querySelector(".card__image").alt = product.name;
+    productsCopy.querySelector(".card__category").textContent = product.recommendedSkinType;
+    productsCopy.querySelector(".card__name").textContent = product.name;
+    productsCopy.querySelector(".card__description").textContent = product.description;
 
-            <span class="card__category">${product.targetSkinType}</span>
+    const compoundList = productsCopy.querySelector(".compound__list");
+    product.ingredients.forEach(ingredient => {
+        const productIngredient = document.createElement("li");
+        productIngredient.textContent = ingredient;
+        compoundList.appendChild(productIngredient);
+    });
 
-            <h2 class="card__name">${product.name}</h2>
+    productsCopy.querySelector(".card__price-value").textContent = product.price;
 
-            <p class="card__description">
-                ${product.description}
-            </p>
+    productsList.appendChild(productsCopy);
+});
 
-            <div class="card__compound compound">
+const productInfo = cosmeticProducts.reduce((box, product) => {
+    box.push({[product.name]: product.description});
+    return box;
+}, []);
 
-                <span class="compound__name">Состав</span>
+console.log(productInfo);
 
-                <ul class="compound__list">
-
-                    ${product.ingredients
-                        .map(ingredient => `<li>${ingredient}</li>`)
-                        .join("")}
-
-                </ul>
-
-            </div>
-
-            <div class="card__price">
-                <b>Цена</b>
-
-                <span>${product.price.toLocaleString("ru-RU")} ₽</span>
-            </div>
-
-        </li>
-    `;
-}
-
-function renderProducts(products) {
-    productsList.innerHTML = products
-        .map(product => getProductTemplate(product))
-        .join("");
-}
-
-const productsDescription = cosmeticProducts.reduce(
-    (result, product) => {
-        result.push({
-            [product.name]: product.description
-        });
-
-        return result;
-    },
-    []
-);
-
-console.log(productsDescription);
-
-function getProductsCount() {
-    const count = Number(
-        prompt("Сколько карточек отобразить? От 1 до 5")
-    );
-
-    if (Number.isInteger(count) && count >= 1 && count <= 5) {
-        return count;
-    }
-
-    return getProductsCount();
-}
-
-const productsCount = getProductsCount();
-
-renderProducts(cosmeticProducts.slice(0, productsCount));

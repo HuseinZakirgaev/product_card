@@ -11,10 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Подключение CSS -->
     <link rel="stylesheet" href="./css/style.css">
@@ -29,53 +26,17 @@
 <body>
 
     <main class="main">
-
         <div class="container catalog__container">
-
-            <h1 class="products__title js-products-title">
-                Выбери свой продукт
-            </h1>
-
-            <div class="actions-panel">
-
-                <button
-                    class="btn js-change-color-btn"
-                    type="button"
-                >
-                    Сменить цвет кнопки
-                </button>
-
-                <button
-                    class="btn js-paint-card-btn"
-                    type="button"
-                >
-                    Покрасить первую карточку
-                </button>
-
-                <button
-                    class="btn js-paint-all-cards-btn"
-                    type="button"
-                >
-                    Покрасить все карточки
-                </button>
-
-                <button
-                    class="btn js-open-google-btn"
-                    type="button"
-                >
-                    Открыть Google
-                </button>
-
-                <button
-                    class="btn js-log-alert-btn"
-                    type="button"
-                >
-                    Вывод дз №6
-                </button>
-
-            </div>
-
-            <div class="registration">
+            <h1 class="products__title js-products-title">Выбери свой продукт</h1>
+                <div class="actions-panel">
+                    <button class="btn js-change-color-btn" type="button">Сменить цвет кнопки</button>
+                    <button class="btn js-paint-card-btn" type="button">Покрасить первую карточку</button>
+                    <button class="btn js-paint-all-cards-btn" type="button">Покрасить все карточки</button>
+                    <button class="btn js-open-google-btn" type="button">Открыть Google</button>
+                    <button class="btn js-log-alert-btn" type="button">Вывод дз №6</button>
+                </div>
+                
+                <div class="registration">
 
                 <button
                     id="registration-button"
@@ -93,7 +54,27 @@
 
             </div>
 
-            <ul class="products clear-list"></ul>
+            <ul class="products clear-list js-products"></ul>
+
+            <template class="js-product-card-template">
+                <li class="products__item card">
+                    <img src="" class="card__image" alt="">
+                    <span class="card__category"></span>
+                    <h2 class="card__name"></h2>
+                    <p class="card__description"></p>
+                    <div class="card__compound compound">
+                        <span class="compound__name">Состав:</span>
+                        <ul class="compound__list"></ul>
+                    </div>
+                    <div class="card__price">
+                        <b class="card__price-label">Цена</b>
+                        <div class="card__price-total">
+                            <span class="card__price-value"></span>
+                            <span class="card__price-currency">₽</span>
+                        </div>
+                    </div>
+                </li>
+            </template>
 
         </div>
 
@@ -428,10 +409,7 @@
     </div>
 
     <!-- Подключение JavaScript -->
-    <script
-        type="module"
-        src="./js/main.js"
-    ></script>
+    <script type="module" src="./js/main.js"></script>
 
 </body>
 
